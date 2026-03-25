@@ -1,0 +1,77 @@
+.cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-thin);
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-cell);
+  transition: background-color 0.15s;
+  position: relative;
+}
+
+.cell:active {
+  background: var(--bg-cell-selected);
+}
+
+.given {
+  background: var(--bg-cell-given);
+}
+
+.selected {
+  background: var(--bg-cell-selected) !important;
+}
+
+.highlighted {
+  background: var(--bg-cell-highlighted);
+}
+
+.sameValue {
+  background: var(--bg-cell-same-value);
+}
+
+.conflict {
+  background: var(--bg-cell-conflict) !important;
+}
+
+.borderRight {
+  border-right: 2px solid var(--border-thick);
+}
+
+.borderBottom {
+  border-bottom: 2px solid var(--border-thick);
+}
+
+.value {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text-user);
+}
+
+.given .value {
+  color: var(--text-given);
+  font-weight: 700;
+}
+
+.conflict .value {
+  color: var(--text-conflict);
+}
+
+.candidates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+
+.candidate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.45rem, 1.5vw, 0.7rem);
+  color: var(--text-candidate);
+  line-height: 1;
+}
