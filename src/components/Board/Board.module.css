@@ -13,6 +13,7 @@
 @media (max-width: 600px) {
   .board {
     border-width: var(--size-50);
-    max-width: 288px;
+    max-width: calc(100vw - 48px);
+    aspect-ratio: 1;
   }
 }
