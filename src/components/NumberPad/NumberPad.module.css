@@ -7,16 +7,16 @@
 .numbers {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-100);
   padding: var(--space-100);
 }
 
 .numButton {
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  width: var(--size-700);
-  height: var(--size-700);
+  aspect-ratio: 1;
   border: none;
   border-radius: var(--radius-50);
   background: var(--color-surface-container);
@@ -128,8 +128,6 @@
   }
 
   .numButton {
-    width: var(--size-400);
-    height: var(--size-400);
     padding: var(--space-50);
     font-size: 16px;
     line-height: 24px;
