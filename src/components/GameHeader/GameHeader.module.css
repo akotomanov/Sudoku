@@ -2,34 +2,54 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 500px;
   width: 100%;
-  margin: 0 auto;
-  padding: 0.5rem 0;
+  padding: var(--space-100);
+  position: relative;
 }
 
 .difficulty {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+  color: var(--color-on-surface-variant);
 }
 
 .newGame {
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.4rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  padding: var(--space-100) var(--space-150);
   border: none;
-  border-radius: 8px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
+  border-radius: var(--radius-50);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
   cursor: pointer;
   transition: background-color 0.15s, transform 0.1s;
 }
 
+@media (hover: hover) {
+  .newGame:hover {
+    background: var(--color-primary-container-8);
+  }
+}
+
 .newGame:active {
   transform: scale(0.95);
-  background: var(--btn-bg-active);
-  color: white;
+  background: var(--color-primary-container-8);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: var(--space-200);
+  }
+
+  .difficulty {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+  }
 }

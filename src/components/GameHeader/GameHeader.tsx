@@ -20,7 +20,7 @@ export function GameHeader({ difficulty, timerFormatted, onNewGame }: GameHeader
       <span className={styles.difficulty}>{difficultyLabels[difficulty]}</span>
       <Timer formatted={timerFormatted} />
       <button className={styles.newGame} onClick={onNewGame}>
-        New Game
+        New game
       </button>
     </div>
   );

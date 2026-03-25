@@ -1,6 +1,23 @@
 .timer {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-primary);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.15px;
+  color: var(--color-on-surface);
   font-variant-numeric: tabular-nums;
+  text-align: center;
+  width: 144px;
+}
+
+@media (max-width: 600px) {
+  .timer {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    width: auto;
+  }
 }

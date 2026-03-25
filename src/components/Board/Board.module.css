@@ -2,10 +2,17 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(9, 1fr);
-  border: 2px solid var(--border-thick);
-  max-width: 500px;
+  border: var(--size-100) solid var(--color-outline);
+  background: var(--color-surface-container-lowest);
+  max-width: 576px;
   width: 100%;
   margin: 0 auto;
-  border-radius: 4px;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .board {
+    border-width: var(--size-50);
+    max-width: 288px;
+  }
 }

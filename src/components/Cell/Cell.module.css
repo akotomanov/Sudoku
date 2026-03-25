@@ -3,59 +3,64 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border-thin);
+  border: 1px solid var(--color-outline-variant);
   cursor: pointer;
   user-select: none;
-  background: var(--bg-cell);
+  background: var(--color-surface);
   transition: background-color 0.15s;
   position: relative;
+  padding: var(--space-100);
+}
+
+@media (hover: hover) {
+  .cell:hover {
+    background: var(--color-primary-container-8);
+  }
 }
 
 .cell:active {
-  background: var(--bg-cell-selected);
-}
-
-.given {
-  background: var(--bg-cell-given);
+  background: var(--color-primary-16);
 }
 
 .selected {
-  background: var(--bg-cell-selected) !important;
+  background: var(--color-primary-16) !important;
 }
 
 .highlighted {
-  background: var(--bg-cell-highlighted);
+  background: var(--color-primary-container-8);
 }
 
 .sameValue {
-  background: var(--bg-cell-same-value);
+  background: var(--color-primary-container-8);
 }
 
 .conflict {
-  background: var(--bg-cell-conflict) !important;
+  background: var(--color-error-16) !important;
 }
 
 .borderRight {
-  border-right: 2px solid var(--border-thick);
+  border-right: var(--size-50) solid var(--color-outline);
 }
 
 .borderBottom {
-  border-bottom: 2px solid var(--border-thick);
+  border-bottom: var(--size-50) solid var(--color-outline);
 }
 
 .value {
-  font-size: clamp(1.2rem, 4vw, 1.8rem);
-  font-weight: 600;
-  color: var(--text-user);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.5px;
+  color: var(--color-on-surface);
 }
 
-.given .value {
-  color: var(--text-given);
-  font-weight: 700;
+.selected .value {
+  color: var(--color-primary);
 }
 
 .conflict .value {
-  color: var(--text-conflict);
+  color: var(--color-error);
 }
 
 .candidates {
@@ -71,7 +76,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(0.45rem, 1.5vw, 0.7rem);
-  color: var(--text-candidate);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-on-surface-variant);
   line-height: 1;
+}
+
+@media (max-width: 600px) {
+  .cell {
+    padding: var(--space-50);
+  }
+
+  .value {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+
+  .borderRight {
+    border-right-width: var(--size-25);
+  }
+
+  .borderBottom {
+    border-bottom-width: var(--size-25);
+  }
+
+  .candidate {
+    font-size: 7px;
+  }
 }

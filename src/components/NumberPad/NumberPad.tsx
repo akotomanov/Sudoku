@@ -1,3 +1,6 @@
+import UndoIcon from '../icons/UndoIcon';
+import BackspaceIcon from '../icons/BackspaceIcon';
+import EditIcon from '../icons/EditIcon';
 import styles from './NumberPad.module.css';
 
 interface NumberPadProps {
@@ -23,27 +26,25 @@ export function NumberPad({ onNumber, onErase, onUndo, onToggleCandidateMode, ca
               disabled={exhausted}
             >
               {num}
-              {numberCounts[num] > 0 && (
-                <span className={styles.count}>{numberCounts[num]}</span>
-              )}
+              <span className={styles.shortcut}>{num}</span>
             </button>
           );
         })}
       </div>
       <div className={styles.actions}>
         <button className={styles.actionButton} onClick={onUndo}>
-          <span className={styles.actionIcon}>&#x21A9;</span>
+          <span className={styles.actionIcon}><UndoIcon /></span>
           <span className={styles.actionLabel}>Undo</span>
         </button>
         <button className={styles.actionButton} onClick={onErase}>
-          <span className={styles.actionIcon}>&#x232B;</span>
+          <span className={styles.actionIcon}><BackspaceIcon /></span>
           <span className={styles.actionLabel}>Erase</span>
         </button>
         <button
           className={`${styles.actionButton} ${candidateMode ? styles.active : ''}`}
           onClick={onToggleCandidateMode}
         >
-          <span className={styles.actionIcon}>&#x270E;</span>
+          <span className={styles.actionIcon}><EditIcon /></span>
           <span className={styles.actionLabel}>Notes</span>
         </button>
       </div>

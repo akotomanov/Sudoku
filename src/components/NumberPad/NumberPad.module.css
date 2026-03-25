@@ -1,39 +1,47 @@
 .container {
-  max-width: 500px;
+  max-width: 592px;
   width: 100%;
   margin: 0 auto;
-  padding: 0.5rem 0;
 }
 
 .numbers {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 4px;
-  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-100);
 }
 
 .numButton {
-  aspect-ratio: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: var(--size-700);
+  height: var(--size-700);
   border: none;
-  border-radius: 8px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
-  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
-  font-weight: 600;
+  border-radius: var(--radius-50);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.5px;
   cursor: pointer;
   position: relative;
   transition: background-color 0.15s, transform 0.1s;
-  min-height: 44px;
+  overflow: clip;
+  padding: var(--space-100);
+}
+
+@media (hover: hover) {
+  .numButton:hover {
+    background: var(--color-primary-container-8);
+  }
 }
 
 .numButton:active {
   transform: scale(0.95);
-  background: var(--btn-bg-active);
-  color: white;
+  background: var(--color-primary-container-8);
 }
 
 .exhausted {
@@ -43,55 +51,110 @@
 
 .exhausted:active {
   transform: none;
-  background: var(--btn-bg);
-  color: var(--btn-text);
+  background: var(--color-surface-container);
 }
 
-.count {
-  font-size: 0.5rem;
-  opacity: 0.6;
+.shortcut {
   position: absolute;
   top: 2px;
   right: 4px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
 }
 
 .actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+  display: flex;
+  gap: var(--space-100);
+  padding: var(--space-100);
 }
 
 .actionButton {
   display: flex;
-  flex-direction: column;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  padding: 8px;
+  gap: var(--space-100);
+  height: var(--size-700);
+  padding: var(--space-150);
   border: none;
-  border-radius: 8px;
-  background: var(--btn-bg);
-  color: var(--btn-text);
+  border-radius: var(--radius-50);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
   cursor: pointer;
   transition: background-color 0.15s, transform 0.1s;
-  min-height: 44px;
+}
+
+@media (hover: hover) {
+  .actionButton:hover {
+    background: var(--color-primary-container-8);
+  }
 }
 
 .actionButton:active {
   transform: scale(0.95);
+  background: var(--color-primary-container-8);
 }
 
 .active {
-  background: var(--btn-bg-active);
-  color: white;
+  background: var(--color-primary-16);
+  color: var(--color-primary);
 }
 
 .actionIcon {
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .actionLabel {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.1px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: var(--space-200);
+  }
+
+  .numbers {
+    padding: var(--space-50);
+  }
+
+  .numButton {
+    width: var(--size-400);
+    height: var(--size-400);
+    padding: var(--space-50);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+  }
+
+  .shortcut {
+    display: none;
+  }
+
+  .actions {
+    gap: var(--space-100);
+    padding: var(--space-50);
+  }
+
+  .actionButton {
+    flex-direction: column;
+    gap: var(--space-25);
+    height: auto;
+    padding: var(--space-100) var(--space-150);
+  }
+
+  .actionLabel {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+  }
 }
